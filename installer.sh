@@ -7,16 +7,15 @@ menu()
 	Info "- 2  -  Wallet"
 	Info "- 3  -  Telegram"
         Info "- 4  -  Browsers"
-        Info "- 5  -  Octo Browser"
 	Info "- 0  -  Выход"
 	log_s
 	Info
 	read -p "Пожалуйста, введите пункт меню:" case
 	case $case in
 		1) cryptors;;   
-		2) electrum;;
-		3) veracrypt;;
-    4) nas_konfig;;
+		2) wallet;;
+		3) telegram;;
+                4) browser;;
 		0) exit;;
 	esac
 }
