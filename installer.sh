@@ -63,8 +63,6 @@ esac
 }
 cryptors
 
-
-
 telegram()
 {
 sudo
