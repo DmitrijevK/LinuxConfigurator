@@ -1,51 +1,30 @@
 #!/bin/bash
 
-Infon() {
-	printf "\033[1;32m$@\033[0m"
-}
-Info()
+
+
+ProxyConf()
 {
-	Infon "$@\n"
+CONFIG_FILE="/etc/proxychains4.conf"
+if [ ! -f $CONFIG_FILE ]; then
+    echo "Файл $CONFIG_FILE не найден. Пожалуйста, убедитесь, что proxychains4 установлен."
+    exit 1
+fi
+add_comment() {
+    local target_pattern="$1"
+    sed -i "/$target_pattern/ s/^/#/" $CONFIG_FILE
 }
-Error()
-{
-	printf "\033[1;31m$@\033[0m\n"
+remove_comment() {
+    local target_pattern="$1"
+    sed -i "/$target_pattern/ s/^#//" $CONFIG_FILE
 }
-Error_n()
-{
-	Error "$@"
-}
-Error_s()
-{
-	Error "============================================"
+add_comment "strict_chain"
+remove_comment "dynamic_chain"
 }
 
-menu()
+OpenVpn()
 {
-
-}
-
-vpn()
-{
-read file_name
-sudo nano /etc/proxychains4.conf
-#dynamic_chain
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get install openvpn -y
-sudo openvpn --config $file_name
-}
-
-OS_Safe()
-{
-read wlan_name
-read dns_server
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install macchanger -y
-sudo ifconfig wlan0 down && sudo macchanger -r wlan0 && sudo ifconfig $wlan_name up
-sudo nano /etc/resolv.conf
-nameserver $dns_server
-}
-tor()
-{
-ExitNodes {US, EU}
-StrictExitNodes 1
-propertions:/javascriptenable 0
+#dorabotat sistemu konfiga
+echo "Есть ли у вас конфиг? Y\N"
+sudo openvpn --config 
 }
