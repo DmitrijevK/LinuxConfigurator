@@ -54,3 +54,24 @@ fi
 echo $NEW_DNS_SERVER | sudo tee -a $CONFIG_FILE > /dev/null
 echo "Строка '$NEW_DNS_SERVER' успешно добавлена в файл $dCONFIG_FILE."
 }
+
+
+{
+# Открываем файл torcc для чтения
+with open('/tor-browser/Browser/TorBrowser/Data/Tor/torcc', 'r') as torcc_file:
+    torcc_content = torcc_file.read()
+
+# Спрашиваем у пользователя, какие страны необходимо исключить
+excluded_countries = input("Введите коды стран для исключения (разделите их запятой, например: BY,RU): ").split(',')
+
+# Генерируем строку для исключения стран
+exclude_string = ','.join(excluded_countries)
+
+
+new_torcc_content = torcc_content + f"ExitNodes {{US}}\nStrictExitNodes 1\nExcludeNodes {exclude_string}\n"
+
+with open('/tor-browser/Browser/TorBrowser/Data/Tor/torcc', 'w') as torcc_file:
+    torcc_file.write(new_torcc_content)
+
+
+}
