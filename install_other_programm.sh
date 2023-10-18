@@ -26,7 +26,7 @@ browser()
 {
 	clear
 	Info
-	log_t "VDS настройки и конфигурации"
+	log_t "Установщик Браузеров"
   Info "- 1  -  Dolphin Anty"
   Info "- 2  -  Octo Browser"
   Info "- 3  -  Tor Browser"
@@ -48,10 +48,9 @@ cryptors()
 {
 	clear
 	Info
-	log_t "VDS настройки и конфигурации"
+	log_t "Крипторы | Советую VeraCrypt"
   Info "- 1  -  Vera Crypt"
   Info "- 2  -  True Crypt"
-  Info "- 3  -  Tor Browser"
 	Info "- 0  -  Выход"
 	log_s
 	Info
