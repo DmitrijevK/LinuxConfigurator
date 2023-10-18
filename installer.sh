@@ -63,3 +63,16 @@ esac
 }
 cryptors
 
+
+
+telegram()
+{
+sudo
+sudo apt install snapd
+sudo systemctl  enable snapd.service
+sudo systemctl start snapd.service
+sudo snap install telegram-desktop
+snap run telegram-desktop
+sudo start snapd.apparmor service
+}
+telegram
