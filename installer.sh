@@ -72,6 +72,19 @@ esac
 }
 cryptors
 
+vercrypt()
+{
+sudo wget https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-setup.tar.bz2
+tar xfvz veracrypt-1.26.7-setup.tar.bz2
+./veracrypt-1.26.7-setup.tar.bz2
+}
+truecrypt()
+{
+sudo wget http://truecrypt.org/download/truecrypt-7.1a-linux-console-x64.tar.gz
+tar xfvz truecrypt-7.1a-linux-console-x64.tar.gz
+./truecrypt-7.1a-linux-console-x64.tar.gz
+}
+
 wallet()
 {
 #electrum
@@ -81,6 +94,7 @@ sudo apt install python3-pip python3-setuptools python3-pyqt5 libsecp256k1-dev
 
 }
 wallet
+
 telegram()
 {
 sudo
