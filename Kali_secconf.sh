@@ -25,7 +25,7 @@ OpenVpn()
 {
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get install openvpn -y
 #dorabotat sistemu konfiga
-echo "Есть ли у вас конфиг? Y\N"
+echo "Установите имя вашего конфига Open-VPN"
 read oovpnconfigname
 sudo openvpn --config $oovpnconfigname
 }
