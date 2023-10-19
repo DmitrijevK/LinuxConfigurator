@@ -67,6 +67,7 @@ esac
 
 }
 cryptors
+
 wallet()
 {
 #electrum
@@ -75,7 +76,7 @@ sudo apt install python3-pip python3-setuptools python3-pyqt5 libsecp256k1-dev
 #Litecoincore
 
 }
-
+wallet
 telegram()
 {
 sudo
