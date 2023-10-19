@@ -47,6 +47,10 @@ torbrowser()
 {
 sudo apt install tor torbrowser-launcher
 }
+dolphin()
+{
+sudo apt install dolphin-emu
+}
 
 cryptors()
 {
