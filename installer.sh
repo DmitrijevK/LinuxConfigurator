@@ -43,6 +43,11 @@ esac
 }
 browser
 
+torbrowser()
+{
+sudo apt install tor torbrowser-launcher
+}
+
 cryptors()
 {
 	clear
